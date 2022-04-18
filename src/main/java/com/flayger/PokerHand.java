@@ -183,12 +183,7 @@ public class PokerHand implements Comparable<PokerHand> {
     }
 
     private boolean isRoyal() {
-        if (cards.stream().anyMatch(o -> o.getRank().equals(ValidRank.TEN)))
-            if (cards.stream().anyMatch(o -> o.getRank().equals(ValidRank.JACK)))
-                if (cards.stream().anyMatch(o -> o.getRank().equals(ValidRank.QUEEN)))
-                    if (cards.stream().anyMatch(o -> o.getRank().equals(ValidRank.KING)))
-                        return cards.stream().anyMatch(o -> o.getRank().equals(ValidRank.ACE));
-        return false;
+       return cards.stream().anyMatch(o -> o.getRank().equals(ValidRank.ACE));
     }
 
     //RankMap после определения комбинации содержит только карты вне комбинаций
